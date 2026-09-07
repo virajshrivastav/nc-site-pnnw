@@ -48,10 +48,24 @@ imagery or analytics was introduced to improve a score.
 Run `npm run qa -- <url>` to repeat the browser checks. Output and screenshots are
 generated into the ignored `test-results` directory.
 
+## Live deployment verification
+
+Repeated the complete browser suite against
+`https://nc-site-pnnw.vercel.app/` on 7 September 2026: **all checks passed**,
+including all six viewport widths, exact copy, all nine images, automated
+accessibility scans, keyboard/anchor behaviour, reduced motion, no cookies or
+browser storage, API validation and JavaScript-disabled native form submission.
+
+The stable alias and immutable URL in README both returned **HTTP 200** without
+a login. Vercel reports deployment `dpl_9picLTxUGbsbSciUv4wdPrBEc2Ff` as **READY**,
+and GitHub's Vercel status is successful for commit `539c430`.
+The immutable deployment URL carries Vercel's `X-Robots-Tag: noindex`.
+The only external browser request host was the supplied photo host, including
+on the live deployment; no Vercel feedback toolbar or analytics script loaded.
+
 ## Still requires launch input
 
 - Real booking/contact/domain values and the real waitlist endpoint.
 - Confirmation the endpoint accepts JSON, with production rate limiting and
   consent/unsubscribe handling supplied by the mailing service.
 - Human review on an actual phone and the client's subjective design judgment.
-- Vercel deployment is unverified and blocked on access/linkage; see README.

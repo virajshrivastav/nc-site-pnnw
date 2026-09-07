@@ -2,21 +2,20 @@
 
 One-page, mobile-first Next.js website for the supplied Nine Cypresses brief.
 
-**Live preview: not yet verified — deployment is blocked on Vercel access/linkage.**
+**Live website preview: [nc-site-pnnw.vercel.app](https://nc-site-pnnw.vercel.app/)**
 
-The site was pushed to `main` at commit
-[`27a5c8f`](https://github.com/virajshrivastav/nc-site-pnnw/commit/27a5c8f3206f1cc74e2cf1969c138e8d5a389160)
-on 7 September 2026. GitHub reports no Vercel deployment/check for that commit.
-The candidate default alias `https://nc-site-pnnw.vercel.app` returns
-`404 DEPLOYMENT_NOT_FOUND`; it is not a verified project URL. The builder does not
-currently have authenticated Vercel access. This README will name a preview URL
-only after that URL is actually verified.
+**Immutable first-build preview:**
+[nc-site-pnnw-3g9go18so-virajshrivastavs-projects.vercel.app](https://nc-site-pnnw-3g9go18so-virajshrivastavs-projects.vercel.app/)
 
-To unblock: in the existing Vercel project, confirm this repository is connected,
-the framework is Next.js, the root is the repository root and the production
-branch is `main`; deploy its latest commit. Alternatively, connect Vercel to the
-builder so it can inspect and finish the deployment. Do not create a duplicate
-project if the existing one is available.
+Both URLs were verified publicly accessible with HTTP 200 on 7 September 2026.
+The initial Vercel deployment is `READY`, built from `main` commit
+[`539c430`](https://github.com/virajshrivastav/nc-site-pnnw/commit/539c43046a75365a10143f1c0a4f1555c5add69f).
+The stable alias follows subsequent deployments of `main`; the immutable URL
+preserves the first reviewed build.
+
+The full browser QA suite was repeated successfully against the live stable
+alias. See `QA.md` for tested behaviours and the distinction between automated
+checks and human/real-device review.
 
 ## Development
 
@@ -43,8 +42,11 @@ The browser checks cover exact copy from `BRIEF.md`, responsive overflow, image 
 
 ## Deployment and launch
 
-Pushing to `main` is intended to deploy through the existing Vercel connection.
-That connection has not yet been independently confirmed.
+The Vercel project is connected to `virajshrivastav/nc-site-pnnw`, production
+branch `main`, framework Next.js, repository root, `npm ci` / `npm run build`.
+Node.js 22 is pinned in `package.json` and was verified in the first deployment.
+The project was imported with the operator's approval after confirming that no
+matching project/link existed in the connected account.
 
 - Set the **server-only** Vercel environment variable `WAITLIST_ENDPOINT` to the client's actual HTTPS endpoint, then redeploy. The literal placeholder is in `.env.example` and `lib/waitlist.mjs`. The endpoint receives JSON with required `email` and optional `name`.
 - With no real endpoint, the waitlist truthfully reports that submissions are not saved; it does not simulate a signup.
