@@ -54,4 +54,4 @@ generated into the ignored `test-results` directory.
 - Confirmation the endpoint accepts JSON, with production rate limiting and
   consent/unsubscribe handling supplied by the mailing service.
 - Human review on an actual phone and the client's subjective design judgment.
-- Vercel URL verification is recorded in README after deployment.
+- Vercel deployment is unverified and blocked on access/linkage; see README.
